@@ -1,0 +1,57 @@
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+const caracteres = "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const tamanho = 16;
+
+let colunas;
+let gotas;
+
+function ajustarCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    colunas = Math.floor(canvas.width / tamanho);
+
+    gotas = Array(colunas).fill(1);
+}
+
+ajustarCanvas();
+
+window.addEventListener("resize", ajustarCanvas);
+
+function desenharMatrix() {
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff41";
+    ctx.font = tamanho + "px monospace";
+
+    for (let i = 0; i < gotas.length; i++) {
+
+        const caractere = caracteres[
+            Math.floor(Math.random() * caracteres.length)
+        ];
+
+        ctx.fillText(
+            caractere,
+            i * tamanho,
+            gotas[i] * tamanho
+        );
+
+        if (
+            gotas[i] * tamanho > canvas.height &&
+            Math.random() > 0.975
+        ) {
+            gotas[i] = 0;
+        }
+
+        gotas[i]++;
+    }
+}
+
+setInterval(desenharMatrix, 50);

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix | Meu Perfil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="matrix"></canvas>
+
+    <main class="container">
+        <div class="profile-card">
+
+            <div class="status">● ONLINE</div>
+
+            <div class="profile-image">
+                <img src="perfil.jpg" alt="Minha foto">
+            </div>
+
+            <h1>SEU NOME</h1>
+
+            <p class="profession">
+                Desenvolvedor Front-end
+            </p>
+
+            <p class="description">
+                Explorando o mundo da programação,
+                uma linha de código por vez.
+            </p>
+
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JAVASCRIPT</span>
+            </div>
+
+            <a href="https://github.com/" target="_blank"
+               class="github-button">
+                ACESSAR GITHUB ↗
+            </a>
+
+            <footer>
+                SYSTEM ONLINE // MATRIX
+            </footer>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
